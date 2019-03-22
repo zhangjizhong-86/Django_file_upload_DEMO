@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>文件上传</title>
+
+	<script>
+	
+	function click_upload() {
+		document.getElementById('input').click();
+	}
+	
+	</script>
+</head>
+
+<body>
+	<form enctype="multipart/form-data" name='form' method="post" action="/upload/">{% csrf_token %}
+	<input type="file" id='input' name="upload_file" onChange="document.forms['form'].submit();" style='display:none'/>
+	<a href='javascript:click_upload();' >UPLOAD</>
+</body>
+</html>
